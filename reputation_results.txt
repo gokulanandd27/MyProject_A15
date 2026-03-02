@@ -1,0 +1,15 @@
+Verifying Reputation System...
+
+[1] Sending first message (Should be active, Score 100)
+Status: active, Score: 100
+PASS: Initial score is 100.
+
+[2] Sending toxic messages to lower score...
+Msg 1: Status: active, Score: 80, Action: warn
+Msg 2: Status: active, Score: 60, Action: warn
+Msg 3: Status: active, Score: 40, Action: warn
+Msg 4: Status: muted, Score: 20, Action: warn
+PASS: User is MUTED.
+
+[3] Sending message while muted...
+PASS: Message blocked. Reason: You are muted for 119 seconds.

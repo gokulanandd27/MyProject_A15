@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+      - /app/__pycache__
+    environment:
+      - FLASK_ENV=development
+    networks:
+      - app-network
+
+  frontend:
+    build: ./client
+    ports:
+      - "5173:3000" # Map host 5173 to container 3000
+    depends_on:
+      - backend
+    environment:
+      - VITE_API_URL=http://localhost:5000 # For separate containers, frontend (browser) still hits localhost:5000
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

@@ -1,0 +1,20 @@
+Verifying 'reason' and 'severity' fields in API response...
+Sending toxic message: You are stupid
+Response Received: {
+  "action": "warn",
+  "display_text": "You are stupid",
+  "duration": "7 seconds",
+  "id": 1770868257496,
+  "original_text": "You are stupid",
+  "reason": "Contains banned words/slurs",
+  "severity": "High",
+  "timestamp": "09:20 AM",
+  "type": "toxic",
+  "username": "Tester",
+  "warning_text": "Message removed: High Severity - Contains banned words/slurs"
+}
+[PASS] Message correctly classified as toxic.
+[PASS] 'reason' field correctly updated: Contains banned words/slurs
+[PASS] 'severity' field present: High
+
+SUCCESS: Both fields are present.
